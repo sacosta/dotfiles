@@ -1,0 +1,25 @@
+set relativenumber
+set number
+set clipboard+=unnamedplus
+set clipboard+=ideaput
+
+let mapleader = " "
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap <leader>ir :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>sr :action RenameElement<CR>
+nnoremap <leader>fg :action Find<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fa :action GotoAction<CR>
+nnoremap <leader>df :action ReformatCode<CR>
+nnoremap <leader>fr :action FindUsages<CR>
+
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+
+vnoremap <leader>cc :action CommentByBlockComment<CR>
+
+
+inoremap jk <esc>
