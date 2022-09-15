@@ -50,7 +50,15 @@ M.setup = function()
         buf_set_keymap('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     end
 
-    require("nvim-lsp-installer").setup {}
+    require("mason").setup({
+        ui = {
+            icons = {
+                package_installed = "✓",
+                package_pending = "➜",
+                package_uninstalled = "✗"
+            }
+        }
+    })
     local generic_setup_obj = { on_attach = on_attach }
 
     local lsp_servers = {

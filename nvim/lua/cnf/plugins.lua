@@ -14,13 +14,9 @@ require('packer').startup(function(use)
 
     use 'sbdchd/neoformat'
 
+
     -- LSP and Tree sitter
-    use {
-        'williamboman/nvim-lsp-installer',
-        {
-            "neovim/nvim-lspconfig",
-        }
-    }
+    use { "williamboman/mason.nvim" }
 
     use {
         'nvim-treesitter/nvim-treesitter',

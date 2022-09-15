@@ -39,5 +39,17 @@ M.find_types = function ()
     })
 end
 
+M.find_workspace_symbols = function ()
+    builtin.lsp_dynamic_workspace_symbols()
+end
+
+M.find_nvim_cnf_files = function () 
+    builtin.find_files({
+        cwd = vim.fn.stdpath('config'),
+        hidden = false,
+    })
+end
+
+
 return M
 

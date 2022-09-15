@@ -64,6 +64,8 @@ vim.opt.expandtab = true
 
 vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
 --vim.api.nvim_command('colorscheme base16-nord')
+
+-- Transparent background
 vim.api.nvim_command('highlight Normal guibg=none')
 vim.api.nvim_command('highlight NonText guibg=none')
 
@@ -71,6 +73,8 @@ local remap_opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', remap_opts)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- Exit insert mode
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {})
 
 -- Keep cursor in mid screen 
@@ -85,16 +89,17 @@ vim.api.nvim_set_keymap('n', 'N', 'Nzz', {})
 vim.api.nvim_set_keymap('n', 'g*', 'g*zz', {})
 vim.api.nvim_set_keymap('n', 'g#', 'g#zz', {})
 
-vim.api.nvim_set_keymap('n', '<leader>nc', ':e! ~/.config/nvim/init.lua<CR>', remap_opts)
-vim.api.nvim_set_keymap('n', '<leader>nl', ':e! ~/.config/nvim/lua/cnf<CR>', remap_opts)
+--vim.api.nvim_set_keymap('n', '<leader>nc', ':e! ~/.config/nvim/init.lua<CR>', remap_opts)
+-- vim.api.nvim_set_keymap('n', '<leader>nl', ':e! ~/.config/nvim/lua/cnf<CR>', remap_opts)
+vim.api.nvim_set_keymap('n', '<leader>cn', ':lua require("cnf.telescope").find_nvim_cnf_files()<CR>', remap_opts)
 
 vim.api.nvim_set_keymap('n', '<leader>pf', ':lua require("cnf.telescope").project_find_files()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("cnf.telescope").find_files()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("cnf.telescope").live_grep()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("cnf.telescope").buffers()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>fc', ':lua require("cnf.telescope").find_types()<CR>', remap_opts)
-vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("telescope.builtin").lsp_workspace_symbols()<CR>', remap_opts)
-vim.api.nvim_set_keymap('n', '<leader>ds', ':lua require("telescope.builtin").lsp_document_symbols()<CR>', remap_opts)
+vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("cnf.telescope").find_workspace_symbols()<CR>', remap_opts)
+vim.api.nvim_set_keymap('n', '<leader>ds', ':lua require("telescope.builtin").lsp_document_symbols()<CR>zz', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>bb', ':e #<CR>', remap_opts)
 
 lsp.setup()
