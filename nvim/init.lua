@@ -62,8 +62,11 @@ vim.opt.wildignore = { 'node_modules' }
 -- Use spaces as tabs
 vim.opt.expandtab = true
 
-vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
+-- vim.api.nvim_command('colorscheme base16-solarized-dark')
+
+-- vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
 --vim.api.nvim_command('colorscheme base16-nord')
+vim.api.nvim_command('colorscheme base16-ocean')
 
 -- Transparent background
 vim.api.nvim_command('highlight Normal guibg=none')
@@ -79,7 +82,7 @@ vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {})
 
 -- Keep cursor in mid screen 
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', {})
-vim.api.nvim_set_keymap('n', '<C-u>', '<C-d>zz', {})
+vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', {})
 vim.api.nvim_set_keymap('n', '{', '{zz', {})
 vim.api.nvim_set_keymap('n', '}', '}zz', {})
 vim.api.nvim_set_keymap('n', '*', '*zz', {})
