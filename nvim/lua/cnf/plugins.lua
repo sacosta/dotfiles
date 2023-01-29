@@ -8,6 +8,8 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
+    use 'NoahTheDuke/vim-just'
+
     -- Required by cmp
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'

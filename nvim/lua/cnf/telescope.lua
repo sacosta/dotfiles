@@ -35,7 +35,9 @@ end
 
 -- Find by class/struct name just like IntelliJ
 M.find_types = function ()
-    builtin.lsp_type_definitions({
+    builtin.lsp_workspace_symbols({
+        ignore_patterns = { "automock" },
+        symbols = { "struct", "interface", "class" }
     })
 end
 

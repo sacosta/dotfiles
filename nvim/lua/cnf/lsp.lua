@@ -47,6 +47,7 @@ M.setup = function()
         buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
         buf_set_keymap('n', '<leader>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
         buf_set_keymap('n', '<leader>fr', '<cmd>lua require(\'telescope.builtin\').lsp_references()<CR>', opts)
+        buf_set_keymap('n', '<leader>fi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
         buf_set_keymap('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     end
 
@@ -76,6 +77,7 @@ M.setup = function()
     for name, config in pairs(lsp_servers) do
         nvim_lsp[name].setup(config)
     end
+    nvim_lsp["json-lsp"].setup(generic_setup_obj)
 end
 
 return M
