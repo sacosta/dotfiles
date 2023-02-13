@@ -3,23 +3,47 @@ set number
 set clipboard+=unnamedplus
 set clipboard+=ideaput
 
+# Enable ideavim plugins
+set NERDTree
+set highlightedyank
+
+#let g:highlightedyank_highlight_duration = "1000"
+#let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+
 let mapleader = " "
 
 nnoremap <leader>ci :e ~/.ideavimrc<CR>
-nnoremap <leader>ir :action IdeaVim.ReloadVimRc.reload<CR>
-nnoremap <leader>cr :action RenameElement<CR>
-nnoremap <leader>fg :action Find<CR>
-nnoremap <leader>ff :action GotoFile<CR>
-nnoremap <leader>fb :action RecentFiles<CR>
-nnoremap <leader>ft :action GotoClass<CR>
-nnoremap <leader>fs :action GotoSymbol<CR>
-nnoremap <leader>fa :action GotoAction<CR>
-nnoremap <leader>df :action ReformatCode<CR>
-nnoremap <leader>fr :action FindUsages<CR>
-nnoremap <leader>fg :action FindInPath<CR>
-nnoremap <leader>fg :action FindInPath<CR>
-nnoremap <leader>ds :action FileStructurePopup<CR>
-nnoremap <leader>sfp :action ShowFilePath<CR>
+nnoremap <leader>nt :NERDTree<CR>
+
+map <leader>ir <Action>(IdeaVim.ReloadVimRc.reload)
+map <leader>fg <Action>(Find)
+map <leader>ff <Action>(GotoFile)
+map <leader>fb <Action>(RecentFiles)
+map <leader>ft <Action>(GotoClass)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fa <Action>(GotoAction)
+map <leader>fd <Action>(ActivateProblemsViewToolWindow)
+map <leader>df <Action>(ReformatCode)
+map <leader>fr <Action>(FindUsages)
+map <leader>fg <Action>(FindInPath)
+map <leader>fg <Action>(FindInPath)
+map <leader>fs <Action>(GotoSymbol)
+map <leader>fs <Action>(Gogo)
+map <leader>ds <Action>(FileStructurePopup)
+map <leader>sfp <Action>(ShowFilePath)
+
+# Git commands
+map <leader>ga <Action>(Annotate)
+map <leader>gc <Action>(CheckinProject)
+map <leader>gp <Action>(Vcs.Push)
+
+# Code manipulation
+map <leader>cr <Action>(RenameElement)
+map <leader>cbc<Action>(CommentByBlockComment)
+
+#ideavim don't work well with vim history navigation
+nnoremap C-o :action Back<CR>
+nnoremap C-i :action Forward<CR>
 
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
