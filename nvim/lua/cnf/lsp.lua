@@ -63,21 +63,21 @@ M.setup = function()
     local generic_setup_obj = { on_attach = on_attach }
 
     local lsp_servers = {
-        sumneko_lua = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
+        lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
         rust_analyzer = generic_setup_obj,
         tsserver = generic_setup_obj,
         clangd = generic_setup_obj,
         html = generic_setup_obj,
         tailwindcss = generic_setup_obj,
         gopls = generic_setup_obj,
-        sqls = generic_setup_obj,
+        sqlls = generic_setup_obj,
         taplo = generic_setup_obj,
+        jsonls = generic_setup_obj,
     }
 
     for name, config in pairs(lsp_servers) do
         nvim_lsp[name].setup(config)
     end
-    nvim_lsp["json-lsp"].setup(generic_setup_obj)
 end
 
 return M

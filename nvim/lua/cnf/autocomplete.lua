@@ -52,7 +52,16 @@ cmp.setup.cmdline(':', {
 
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers = { 'rust_analyzer', 'clangd', 'tsserver', 'sumneko_lua', 'html', 'tailwindcss','gopls', 'sqls' }
+local servers = {
+    'rust_analyzer',
+    'clangd',
+    'tsserver',
+    'lua_ls',
+    'html',
+    'tailwindcss',
+    'sqlls',
+    'jsonls',
+}
 
 local lspconfig = require('lspconfig')
 for _, server in pairs(servers) do
