@@ -48,10 +48,10 @@ require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
     use 'folke/zen-mode.nvim'
 
     -- Theme
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'chriskempson/base16-vim'
 
     use {'nvim-orgmode/orgmode',
@@ -64,6 +64,7 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 'lewis6991/gitsigns.nvim' }
 
     -- orgnization
     use {
@@ -72,6 +73,9 @@ require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim' },
         configure = function()
         require'mind'.setup()
+
+    -- utils
+    use 'mbbill/undotree'
   end
 }
 end)

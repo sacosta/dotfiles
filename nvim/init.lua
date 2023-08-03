@@ -2,6 +2,7 @@ require('cnf.plugins')
 require('cnf.telescope')
 require('cnf.rust')
 require('cnf.autocomplete')
+require("zen-mode")
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -189,4 +190,6 @@ neogit.setup {
     }
   }
 }
+
+
 

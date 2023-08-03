@@ -44,37 +44,16 @@ require('lualine').setup {
 }
 local lsp = require('cnf.lsp')
 
-
-vim.opt.filetype = 'on'
-vim.opt.shell = '/bin/zsh'
-vim.opt.mouse = 'a'
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.cursorline = true
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.hidden = true
-vim.opt.termguicolors = true
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.wildignore = { 'node_modules' }
-
--- Use spaces as tabs
-vim.opt.expandtab = true
-
--- vim.api.nvim_command('colorscheme base16-solarized-dark')
--- vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
--- vim.api.nvim_command('colorscheme base16-nord')
-vim.api.nvim_command('colorscheme base16-ocean')
-
--- Transparent background
-vim.api.nvim_command('highlight Normal guibg=none')
-vim.api.nvim_command('highlight NonText guibg=none')
-
-local remap_opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', remap_opts)
+-- Leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+
+
+local remap_opts = { noremap = true, silent = true }
+
+
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', remap_opts)
 
 -- Exit insert mode
 vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {})
@@ -120,7 +99,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
   },
-  ensure_installed = {'org'}, -- Or run :TSUpdate org
+  ensure_installed = {'org','lua', 'typescript', 'rust', 'c'}, -- Or run :TSUpdate org
 }
 
 local neogit = require('neogit')
