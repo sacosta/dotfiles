@@ -1,4 +1,4 @@
-vim.keymap.set('n', '<leader>zz', function() 
+vim.keymap.set('n', '<leader>zz', function()
     local zen = require('zen-mode');
     zen.setup {
         window = {
