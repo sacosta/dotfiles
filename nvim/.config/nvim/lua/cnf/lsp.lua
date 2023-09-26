@@ -45,9 +45,9 @@ M.setup = function()
         buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
         buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
         buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-        buf_set_keymap('n', '<leader>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-        buf_set_keymap('n', '<leader>fr', '<cmd>lua require(\'telescope.builtin\').lsp_references()<CR>', opts)
-        buf_set_keymap('n', '<leader>fi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+        vim.keymap.set('n', '<leader>df', function() vim.lsp.buf.format({ async = true }) end, opts)
+        vim.keymap.set('n', '<leader>fr', function() require('telescope.builtin').lsp_references() end, opts)
+        vim.keymap.set('n', '<leader>fi', function() vim.lsp.buf.implementation() end, opts)
         buf_set_keymap('n', '<leader>cr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     end
 
