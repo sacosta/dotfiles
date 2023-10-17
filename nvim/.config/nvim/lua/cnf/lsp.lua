@@ -64,7 +64,12 @@ M.setup = function()
 
     local lsp_servers = {
         lua_ls = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } },
-        rust_analyzer = generic_setup_obj,
+        rust_analyzer = {
+            on_attach = on_attach,
+            settings = {
+                ["rust-analyzer"] = { check = { command = "clippy" } }
+            }
+        },
         tsserver = generic_setup_obj,
         clangd = generic_setup_obj,
         html = generic_setup_obj,
