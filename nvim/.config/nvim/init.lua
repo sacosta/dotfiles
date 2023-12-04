@@ -81,7 +81,7 @@ vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require("cnf.telescope").find_f
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require("cnf.telescope").live_grep()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require("cnf.telescope").buffers()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>ft', ':lua require("cnf.telescope").find_types()<CR>', remap_opts)
-vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require("cnf.telescope").find_workspace_symbols()<CR>', remap_opts)
+vim.keymap.set('n', '<leader>fs', function() require('cnf.telescope').find_workspace_symbols() end, remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>fd', ':lua require("telescope.builtin").diagnostics()<CR>', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>ds', ':lua require("telescope.builtin").lsp_document_symbols()<CR>zz', remap_opts)
 vim.api.nvim_set_keymap('n', '<leader>bb', ':e #<CR>', remap_opts)

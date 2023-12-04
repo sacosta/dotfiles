@@ -7,6 +7,7 @@ require('telescope').setup({
 local ignore_patterns = { 'node_modules', 'plugged', 'dist' }
 
 local builtin = require('telescope.builtin')
+local themes = require('telescope.themes')
 
 local M = {}
 
@@ -35,14 +36,18 @@ end
 
 -- Find by class/struct name just like IntelliJ
 M.find_types = function ()
-    builtin.lsp_workspace_symbols({
+    builtin.lsp_workspace_symbols(themes.get_ivy({
         ignore_patterns = { "automock" },
+        theme = 'get_cursor',
+        frame_width = 900,
+        symbol_width = 50,
+        symbol_type_width = 12,
         symbols = { "struct", "interface", "class" }
-    })
+    }))
 end
 
 M.find_workspace_symbols = function ()
-    builtin.lsp_dynamic_workspace_symbols()
+    builtin.lsp_workspace_symbols()
 end
 
 M.find_nvim_cnf_files = function ()
@@ -50,6 +55,10 @@ M.find_nvim_cnf_files = function ()
         cwd = vim.fn.stdpath('config'),
         hidden = false,
     })
+end
+
+M.find_help = function ()
+     builtin.help_tags()
 end
 
 
