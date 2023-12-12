@@ -60,6 +60,10 @@ M.setup = function()
             }
         }
     })
+    require("mason-lspconfig").setup({
+        automatic_installation = true
+    })
+
     local generic_setup_obj = { on_attach = on_attach }
 
     local lsp_servers = {
@@ -74,7 +78,6 @@ M.setup = function()
         clangd = generic_setup_obj,
         html = generic_setup_obj,
         tailwindcss = generic_setup_obj,
-        gopls = generic_setup_obj,
         sqlls = generic_setup_obj,
         taplo = generic_setup_obj,
         jsonls = generic_setup_obj,

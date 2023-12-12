@@ -1,4 +1,6 @@
-local opts = {
+local rt = require('rust-tools')
+
+rt.setup({
 	tools = { -- rust-tools options
 		-- automatically set inlay hints (type hints)
 		-- There is an issue due to which the hints are not applied on the first
@@ -6,11 +8,6 @@ local opts = {
 		-- the hints or just run :RustSetInlayHints.
 		-- default: true
 		autoSetHints = true,
-
-		-- whether to show hover actions inside the hover window
-		-- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
-		-- default: true
-		hover_with_actions = true,
 
 		-- how to execute terminal commands
 		-- options right now: termopen / quickfix
@@ -170,8 +167,12 @@ local opts = {
 		-- standalone file support
 		-- setting it to false may improve startup time
 		standalone = true,
-	}, -- rust-analyer options
-
+        on_attach = function (_, bufnr)
+          vim.keymap.set("n", "<C-a>", rt.hover_actions.hover_actions, { buffer = bufnr })
+          -- Code action groups
+          vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+        end,
+    },
 	-- debugging stuff
 	dap = {
 		adapter = {
@@ -180,8 +181,4 @@ local opts = {
 			name = "rt_lldb",
 		},
 	},
-}
-
-require('rust-tools').setup(opts)
-
-
+})

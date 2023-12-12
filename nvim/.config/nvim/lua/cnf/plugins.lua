@@ -18,7 +18,10 @@ require('packer').startup(function(use)
 
 
     -- LSP and Tree sitter
-    use { "williamboman/mason.nvim" }
+    use { 
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    }
 
     use {
         'nvim-treesitter/nvim-treesitter',
