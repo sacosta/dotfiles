@@ -18,9 +18,9 @@ vim.opt.expandtab = true
 -- vim.api.nvim_command('colorscheme base16-solarized-dark')
 -- vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
 -- vim.api.nvim_command('colorscheme base16-nord')
-vim.api.nvim_command('colorscheme base16-ocean')
--- vim.api.nvim_command('colorscheme catppuccin-mocha')
+--vim.api.nvim_command('colorscheme base16-ocean')
+vim.api.nvim_command('colorscheme catppuccin-mocha')
 
 -- Transparent background
-vim.api.nvim_command('highlight Normal guibg=none')
-vim.api.nvim_command('highlight NonText guibg=none')
+--vim.api.nvim_command('highlight Normal guibg=none')
+--vim.api.nvim_command('highlight NonText guibg=none')

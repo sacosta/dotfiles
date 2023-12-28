@@ -16,9 +16,11 @@ require('packer').startup(function(use)
 
     use 'sbdchd/neoformat'
 
+    -- formatter
+    use "stevearc/conform.nvim"
 
     -- LSP and Tree sitter
-    use { 
+    use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     }
