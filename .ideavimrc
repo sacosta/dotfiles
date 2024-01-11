@@ -12,6 +12,7 @@ set highlightedyank
 
 let mapleader = " "
 
+nnoremap Y y$
 nnoremap <leader>ci :e ~/.ideavimrc<CR>
 nnoremap <leader>nt :NERDTree<CR>
 
@@ -27,10 +28,9 @@ map <leader>df <Action>(ReformatCode)
 map <leader>fr <Action>(FindUsages)
 map <leader>fg <Action>(FindInPath)
 map <leader>fg <Action>(FindInPath)
-map <leader>fs <Action>(GotoSymbol)
-map <leader>fs <Action>(Gogo)
 map <leader>ds <Action>(FileStructurePopup)
 map <leader>sfp <Action>(ShowFilePath)
+map <leader>zz <Action>(ToggleDistractionFreeMode)
 
 # Git commands
 map <leader>ga <Action>(Annotate)
@@ -38,16 +38,16 @@ map <leader>gc <Action>(CheckinProject)
 map <leader>gp <Action>(Vcs.Push)
 
 # Code manipulation
+map <leader>ca <Action>(ShowIntentionActions)
 map <leader>cr <Action>(RenameElement)
 map <leader>cbc<Action>(CommentByBlockComment)
+vnoremap <leader>cc :action CommentByBlockComment<CR>
 
 #ideavim don't work well with vim history navigation
-nnoremap C-o :action Back<CR>
-nnoremap C-i :action Forward<CR>
+#nnoremap C-o :action Back<CR>
+#nnoremap C-i :action Forward<CR>
 
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
-
-vnoremap <leader>cc :action CommentByBlockComment<CR>
 
 inoremap jk <esc>
