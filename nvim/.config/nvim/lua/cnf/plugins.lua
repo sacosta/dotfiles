@@ -58,6 +58,7 @@ require('packer').startup(function(use)
     -- Theme
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'chriskempson/base16-vim'
+    use 'ellisonleao/gruvbox.nvim'
 
     use {'nvim-orgmode/orgmode',
         config = function()
@@ -81,6 +82,8 @@ require('packer').startup(function(use)
 
     -- utils
     use 'mbbill/undotree'
+
+
   end
 }
 end)

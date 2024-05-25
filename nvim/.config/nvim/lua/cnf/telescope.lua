@@ -30,6 +30,13 @@ M.live_grep = function ()
     builtin.live_grep()
 end
 
+M.search_in_buffer = function()
+    builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+        winblend = 10,
+        previewer = false,
+    })
+end
+
 M.buffers = function ()
     builtin.buffers()
 end

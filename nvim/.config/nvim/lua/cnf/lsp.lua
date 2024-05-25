@@ -63,9 +63,6 @@ M.setup = function()
 		buf_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 		buf_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 		buf_set_keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-		vim.keymap.set("n", "<leader>df", function()
-			require("conform").format({ lsp_fallback = true })
-		end, opts)
 		vim.keymap.set("n", "<leader>fr", function()
 			require("telescope.builtin").lsp_references()
 		end, opts)
@@ -105,6 +102,7 @@ M.setup = function()
 		sqlls = generic_setup_obj,
 		taplo = generic_setup_obj,
 		jsonls = generic_setup_obj,
+        gopls = generic_setup_obj,
 	}
 
 	for name, config in pairs(lsp_servers) do
