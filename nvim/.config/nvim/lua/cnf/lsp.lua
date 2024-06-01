@@ -102,7 +102,7 @@ M.setup = function()
 		sqlls = generic_setup_obj,
 		taplo = generic_setup_obj,
 		jsonls = generic_setup_obj,
-        gopls = generic_setup_obj,
+		gopls = generic_setup_obj,
 	}
 
 	for name, config in pairs(lsp_servers) do
