@@ -1,3 +1,7 @@
+-- Leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 vim.opt.filetype = 'on'
 vim.opt.shell = '/bin/zsh'
 vim.opt.mouse = 'a'
@@ -33,20 +37,7 @@ vim.opt.inccommand = 'split'
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-
 -- vim.opt.rrtp='/opt/homebrew/opt/fzf'
 
 -- Use spaces as tabs
 vim.opt.expandtab = true
-
--- vim.api.nvim_command('colorscheme base16-solarized-dark')
---vim.api.nvim_command('colorscheme base16-gruvbox-dark-hard')
--- vim.api.nvim_command('colorscheme gruvbox')
--- vim.api.nvim_command('colorscheme base16-nord')
---vim.api.nvim_command('colorscheme base16-ocean')
-vim.api.nvim_command('colorscheme catppuccin-mocha')
--- vim.api.nvim_command('colorscheme catppuccin-latte')
-
--- Transparent background
--- vim.api.nvim_command('highlight Normal guibg=none')
--- vim.api.nvim_command('highlight NonText guibg=none')
