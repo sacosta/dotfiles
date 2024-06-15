@@ -17,6 +17,8 @@ vim.keymap.set('n', '<leader>nt', ':Ex<Cr>')
 vim.keymap.set('n', '<leader>ff', require("cnf.telescope").find_files, remap_opts)
 vim.keymap.set('n', '<leader>fb', require("cnf.telescope").buffers, remap_opts)
 
+vim.keymap.set('n', '<leader>cn', require("cnf.telescope").find_nvim_cnf_files, remap_opts)
+
 -- Keep cursor in mid screen
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
 vim.keymap.set('n', '<C-u>', '<C-u>zz', {})
