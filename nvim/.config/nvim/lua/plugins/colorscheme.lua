@@ -2,11 +2,15 @@ return {
   --colorschemes
   { 'folke/tokyonight.nvim' },
   { 'catppuccin/nvim', name = 'catppuccin' },
-  { 'chriskempson/base16-vim' },
+  { 'RRethy/base16-nvim',
+    config = function ()
+      vim.cmd([[colorscheme base16-everforest]])
+    end
+  },
   { 
     'ellisonleao/gruvbox.nvim',
-    config = function()
-      vim.cmd([[colorscheme gruvbox]])
-    end
+  --  config = function()
+ --      vim.cmd([[colorscheme gruvbox]])
+  --  end
   },
 }

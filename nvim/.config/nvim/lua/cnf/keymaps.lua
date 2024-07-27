@@ -11,6 +11,9 @@ vim.keymap.set('n', 'N', 'Nzz', {})
 vim.keymap.set('n', 'g*', 'g*zz', {})
 vim.keymap.set('n', 'g#', 'g#zz', {})
 
+-- alternate buffers
+vim.keymap.set('n', '<leader>bb', '<C-^>', {})
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>nt', ':Ex<Cr>')
 
@@ -18,6 +21,7 @@ vim.keymap.set('n', '<leader>ff', require("cnf.telescope").find_files, remap_opt
 vim.keymap.set('n', '<leader>fb', require("cnf.telescope").buffers, remap_opts)
 
 vim.keymap.set('n', '<leader>cn', require("cnf.telescope").find_nvim_cnf_files, remap_opts)
+
 
 -- Keep cursor in mid screen
 vim.keymap.set('n', '<C-d>', '<C-d>zz', {})
@@ -35,6 +39,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>nt', ':Ex<Cr>')
 
 -- Telescope
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {
