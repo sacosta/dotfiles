@@ -1,0 +1,10 @@
+services:
+  nvim:
+    build:
+      context: .
+      dockerfile: nvim.dockerfile
+    volumes:
+      - ./nvim:/root/.config/nvim
+      - .:/workspace
+    working_dir: /workspace
+    entrypoint: ["nvim"]
